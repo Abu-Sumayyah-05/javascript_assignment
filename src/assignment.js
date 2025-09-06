@@ -1,7 +1,3 @@
-// ========================
-// DO NOT REMOVE THE EXPORT KEYWORDS
-// ========================
-
 /**
  * Challenge - 1
  *
@@ -14,9 +10,13 @@
  */
 export function sumOfNumbersTo(destination) {
     console.log(destination)
-    // write your code here
-    return 0
+    let sum = 0
+    for (let i = 1; i <= destination; i++) {
+        sum += i
+    }
+    return sum
 }
+sumOfNumbersTo(50)
 
 /**
  * Challenge - 2
@@ -29,18 +29,24 @@ export function sumOfNumbersTo(destination) {
 export function evenNumbersWithin(destination) {
     console.log(destination)
     // get the number from 0 to destination
-    const sum = 0
-    const count = 0
+    let sum = 0
+    let count = 0
     const arrayOfEvenNumbers = []
 
-    // write your code here
-
+    for (let i = 0; i <= destination; i++) {
+        if (i % 2 === 0) {
+            arrayOfEvenNumbers.push(i)
+            sum += i
+            count++
+        }
+    }
     return {
         count,
         sum,
         arrayOfEvenNumbers,
     }
 }
+evenNumbersWithin(20)
 
 /**
  * Challenge - 3
@@ -58,11 +64,14 @@ export function evenNumbersWithin(destination) {
 export function celsiusToFahrenheit(arrayOfNumbers) {
     console.log(arrayOfNumbers)
     const result = []
-
-    // write your code here
+    for (const celsius of arrayOfNumbers) {
+        const fahrenheit = Math.trunc((celsius * 9) / 5 + 32)
+        result.push(fahrenheit)
+    }
 
     return result
 }
+celsiusToFahrenheit([-50, -30, -20, -10])
 
 /**
  * Challenge - 4
@@ -76,11 +85,17 @@ export function celsiusToFahrenheit(arrayOfNumbers) {
 export function oddNumbersWithin(destination) {
     console.log(destination)
     // get the number from 0 to destination
-    const sum = 0
-    const count = 0
+    let sum = 0
+    let count = 0
     const arrayOfOddNumbers = []
 
-    // write your code here
+    for (let i = 0; i <= destination; i++) {
+        if (i % 2 !== 0) {
+            arrayOfOddNumbers.push(i)
+            sum += i
+            count++
+        }
+    }
 
     return {
         count,
@@ -88,6 +103,7 @@ export function oddNumbersWithin(destination) {
         arrayOfOddNumbers,
     }
 }
+oddNumbersWithin(50)
 
 /**
  * Challenge - 5
@@ -101,11 +117,16 @@ export function oddNumbersWithin(destination) {
  */
 export function findMultiples(arrayOfNumbers, factor) {
     console.log(arrayOfNumbers, factor)
-    const sum = 0
-    const count = 0
+    let sum = 0
+    let count = 0
     const arrayOfMultiples = []
-
-    // write your code here
+    for (const num of arrayOfNumbers) {
+        if (num % factor === 0) {
+            arrayOfMultiples.push(num)
+            sum += num
+            count++
+        }
+    }
 
     return {
         count,
@@ -113,7 +134,7 @@ export function findMultiples(arrayOfNumbers, factor) {
         arrayOfMultiples,
     }
 }
-
+findMultiples([1, 2, 3, 4, 5], 3)
 /**
  * Challenge - 6
  *
@@ -129,11 +150,28 @@ export function calculateFactorials(arrayOfNumbers) {
     console.log(arrayOfNumbers)
     const result = []
 
-    // write your code here
+    for (const n of arrayOfNumbers) {
+        if (n < 0) {
+            result.push(0)
+        }
+
+        else if (n === 0) {
+            result.push(1)
+        }
+
+        else {
+            let factorial = 1
+            for (let i = 1; i <= n; i++) {
+                factorial *= i
+            }
+            result.push(factorial)
+        }
+    }
 
     return result
 }
 
+calculateFactorials([0, 1, 2, 3, 4, 5])
 /**
  * Challenge - 7
  *
@@ -146,11 +184,26 @@ export function calculateFactorials(arrayOfNumbers) {
  */
 export function findPrimeNumbers(arrayOfNumbers) {
     console.log(arrayOfNumbers)
-    const sum = 0
-    const count = 0
+    let sum = 0
+    let count = 0
     const arrayOfPrimes = []
+    function isPrime(n) {
+        if (n <= 1)
+            return false
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0)
+                return false
+        }
+        return true
+    }
 
-    // write your code here
+    for (const n of arrayOfNumbers) {
+        if (isPrime(n)) {
+            arrayOfPrimes.push(n)
+            sum += n
+            count++
+        }
+    }
 
     return {
         count,
@@ -158,6 +211,7 @@ export function findPrimeNumbers(arrayOfNumbers) {
         arrayOfPrimes,
     }
 }
+findPrimeNumbers([0, 1, 2, 3, 4, 5, 6, 7])
 
 /**
  * Challenge - 8
@@ -171,10 +225,13 @@ export function doubleTheValues(arrayOfNumbers) {
     console.log(arrayOfNumbers)
     const result = []
 
-    // write your code here
+    for (const n of arrayOfNumbers) {
+        result.push(n * 2)
+    }
 
     return result
 }
+doubleTheValues([1, 2, 3, 4, 5, 6, 7])
 
 // ========================
 // DO NOT REMOVE THE EXPORT KEYWORDS

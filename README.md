@@ -1,8 +1,10 @@
 # AltSchool Assignment
 
 ### Todo
-1. [ ] [Read about GitHub Actions](https://docs.github.com/en/actions/get-started/quickstart)
-2. [ ] [Read about Tests](https://betterstack.com/community/guides/testing/vitest-explained/)
+1. [ ] [Read about GitHub Actions]
+2. [ ] (https://docs.github.com/enactionsget-started/quickstart)
+3. [ ] [Read about Tests]
+4. [ ] (https://betterstack.com/community/guides/testing/vitest-explained/)
 
 Complete all the eight challenges. See below for details of each challenge.
 
